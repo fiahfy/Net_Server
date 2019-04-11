@@ -103,7 +103,7 @@ class Net_Server {
 	* @return object Net_Server_Driver  server object of the desired type
 	* @throws object PEAR_Error
     */
-    function &create($type, $host, $port)
+    static function create($type, $host, $port)
     {
         if (!function_exists('socket_create')) {
             return PEAR::raiseError('Sockets extension not available.');
@@ -121,7 +121,7 @@ class Net_Server {
             return PEAR::raiseError('Driver file is corrupt.', NET_SERVER_ERROR_DRIVER_CORRUPT);
         }
 
-        $server = &new $className($host, $port);
+        $server = new $className($host, $port);
         return $server;
     }
 }

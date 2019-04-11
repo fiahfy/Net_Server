@@ -169,7 +169,7 @@ class Net_Server_Driver extends PEAR
      *
      * @access   private
      */
-    function Net_Server_Driver($domain = "localhost", $port = 10000, $protocol = AF_INET)
+    function __construct($domain = "localhost", $port = 10000, $protocol = AF_INET)
     {
         $this->PEAR();
 
@@ -189,7 +189,7 @@ class Net_Server_Driver extends PEAR
      *
      * @access private
      */
-    function _Net_Server_Driver()
+    function __destruct()
     {
         $this->shutdown();
     }
