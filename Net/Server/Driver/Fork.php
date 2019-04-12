@@ -283,7 +283,7 @@ class Net_Server_Driver_Fork extends Net_Server_Driver
     function closeConnection()
     {
         if (!isset($this->clientFD[0])) {
-            return $this->raiseError( "Connection already has been closed." );
+            return;
         }
 
         if (method_exists($this->callbackObj, "onClose")) {

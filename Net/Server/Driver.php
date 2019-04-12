@@ -191,7 +191,7 @@ class Net_Server_Driver extends PEAR
      */
     function __destruct()
     {
-        // $this->shutdown();
+        $this->shutdown();
     }
 
 
